@@ -1,0 +1,140 @@
+def intro():
+  allowed_users = ['G', 'JOSEPPH', 'BERNARD']
+  user = input("enter: ").upper()
+  
+  if user in allowed_users:
+    print(app())
+  else:
+    print("Try again")
+
+def bmi():
+  
+  weight_in_lbs = float(input("How much do you weigh in lbs? "))
+  height_in_ft = float(input("How tall are you in feet? "))
+
+
+#imperial to metric weight   
+  metric_weight = round((weight_in_lbs * 0.453592), 2)
+
+#imperial to metric height
+ 
+  height_metric = round((height_in_ft * 0.3048), 2)
+
+  print("\nYour weight in kilograms is:", metric_weight)
+  print("Your height in meters is:", height_metric)
+  
+  BMI = input("\nWould you like to know your BMI?")
+  if BMI == "no":
+    print("Thank you")
+  else:
+    user = metric_weight / (height_in_ft ** 2)
+    userbmi = round((user * 10 + 2), 2)
+  if userbmi <= 15.0:
+    print("Your BMI is:", userbmi, "Severely Underweight!")
+  elif 16.0 < userbmi <= 18.0:
+    print("Your BMI is:", userbmi, "Underweight!")
+  elif 18.0 < userbmi <= 25:
+    print("Your BMI is:", userbmi, "Normal")
+  elif 25.0 < userbmi <= 35.0:
+    print("Your BMI is:", userbmi, "Overweight")
+  else: 
+    35.0 < userbmi <= 40.0
+    print("Your BMI is:", userbmi, "Obese!")
+
+def tip():
+
+ print("\nWelcome to Tip Calculator!\n")
+
+ bill = float(input("How much was dinner? "))
+
+ percent_tip = float(input("What percentage tip do you want to give? "))
+
+#calculate taxes    
+ taxes = round((bill * 0.06), 2)
+
+# calculate the tip
+ tip = round((percent_tip / 100 * bill), 2)
+
+#calculate the total bill plus tip
+ total = round((bill + tip + taxes), 2)
+
+ print("Your tip amount is: $", tip)
+
+ print("Your total bill with sales tax is: $", total)
+
+#number of split
+ split = input('would you like to split?')
+ if split == "yes":
+    guests = int(input("How many people are in yout party?"))
+    splitBill = total/guests
+    print("Your new total is: $", splitBill)
+    input("Run again: ")
+ else:
+    print("Your total bill with sales tax is: $", total)
+
+
+
+def rock():
+  print("Hello There!")
+  name = input("What's your name?\n")
+  print("Nice to meet you", name.title())
+  print("Let's play a game")
+  play = input("Would you like to play rock, paper, scissors with me?\n")
+  while play == "yes": 
+   from random import choice
+   objects = ["rock", "paper", "scissors"]
+   computer = choice(objects)
+   rps = str(input("Rock, paper, or scissors? "))
+   if rps == computer:
+    print("I chose", computer)
+    print("Well this is awkward. It's a tie")
+    play = input("Would you like to play again?\n")
+   if rps == ("rock"):
+    if computer == ("scissors"):
+      print("I chose", computer)
+      print("You have bested me")
+      play = input("Would you like to play again?\n")  
+   if rps == ("paper"):
+    if computer == ("rock"):
+      print("I chose", computer)
+      print("You have bested me")
+      play = input("Would you like to play again?\n")
+   if rps == ("rock"):
+    if computer == ("scissors"):
+      print("I chose", computer)
+      print("You have bested me")
+      play = input("Would you like to play again?\n")
+   if computer == ("scissors"):
+    if rps == ("paper"):
+      print("I chose", computer)
+      print("I win gg")
+      play = input("Would you like to play again?\n")
+   if computer == ("rock"):
+    if rps == ("scissors"):
+      print("I chose", computer)
+      print("I win gg")
+      play = input("Would you like to play again?\n")
+   if computer == ("paper"):
+    if rps == ("rock"):
+      print("I chose", computer)
+      print("I win gg")
+      play = input("Would you like to play again?\n")
+   else:
+      print("Thanks for playing rock, paper, scissors!")
+
+
+runAgain = "YES"
+
+def app():
+ app = input("\nWelcome! \n-Press 1 to calculate tip\n-Press 2 to calculate bmi\n")
+ if app == "1":
+    print(tip())
+ if app == "2":
+    print(bmi())
+ if app == "3":
+    print(rock())
+
+
+while runAgain == "YES":
+  intro()
+print("thanks").upper
